@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Orca | Galería</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>Fotos</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="detalles.html">Detalles</a></li>
+<li><a href="galeria.html" class="active">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Galería de Orcas</h2>
+    
+    <section class="galeria">
+        <figure class="gallery-item">
+            <a href="#" onclick="openLightbox('img/orca1.jpg')" title="Orca saltando">
+                <img src="img/orca1.webp" alt="Orca saltando fuera del agua">
+            </a>
+        </figure>
+        <figure class="gallery-item">
+            <a href="#" onclick="openLightbox('img/orca2.jpg')" title="Grupo de orcas">
+                <img src="img/orca2.avif" alt="Grupo de orcas nadando">
+            </a>
+        </figure>
+        <figure class="gallery-item">
+            <a href="#" onclick="openLightbox('img/orca3.jpg')" title="Orca en océano">
+                <img src="img/orca3.jpg" alt="Orca en el océano">
+            </a>
+        </figure>
+        <figure class="gallery-item">
+            <a href="#" onclick="openLightbox('img/orca4.jpg')" title="Orca profunda">
+                <img src="img/orca4.webp" alt="Orca en aguas profundas">
+            </a>
+        </figure>
+        <figure class="gallery-item">
+            <a href="#" onclick="openLightbox('img/orca5.jpg')" title="Orca cazando">
+                <img src="img/orca5.webp" alt="Orca cazando">
+            </a>
+        </figure>
+    </section>
+    
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+</main>
+
+<footer>
+    <p>Matías Sandoval | Programación Front End | 2026</p>
+
+</footer>
+
+<script>
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+</script>
+</body>
+</html>
