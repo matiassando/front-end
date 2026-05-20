@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container py-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+          <div>
+            <h2 class="mb-1">Formulario de Registro de Usuario</h2>
+            <p class="text-muted mb-3">Completa los campos y valida tu información.</p>
+          </div>
+          <div class="badge rounded-pill bg-primary-subtle text-primary border border-primary-subtle">
+            HTML + CSS + JavaScript (validaciones sin required ni regex)
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <form id="registro-form" action="#" method="post" onsubmit="validar(); return true;">
+          <div id="enviados-container" aria-live="polite"></div>
+          <!-- Usuario / Contraseña -->
+          <div class="row g-3 mb-2">
+            <div class="col-md-6">
+              <label for="username" class="form-label">Nombre de usuario</label>
+              <input type="text" class="form-control" id="username" placeholder="Ej: Abel123" />
+              <div id="username-msg" class="form-text msg"></div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" placeholder="Mín 3 máx 6" />
+              <div id="password-msg" class="form-text msg"></div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="re-password" class="form-label">Confirmar contraseña</label>
+              <input type="password" class="form-control" id="re-password" placeholder="Repite la clave" />
+              <div id="re-password-msg" class="form-text msg"></div>
+            </div>
+          </div>
+
+          <!-- Datos personales -->
+          <div class="row g-3 mb-2">
+            <div class="col-md-5">
+              <label for="direccion" class="form-label">Dirección (calle / número)</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ej: Avenida Siempre Viva 742" />
+              <div id="direccion-msg" class="form-text msg"></div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="comuna" class="form-label">Comuna</label>
+              <select id="comuna" class="form-select">
+                <option value="" selected>Seleccione una comuna</option>
+                <option value="Providencia">Providencia</option>
+                <option value="Santiago">Santiago</option>
+                <option value="Ñuñoa">Ñuñoa</option>
+                <option value="Las Condes">Las Condes</option>
+                <option value="Maipú">Maipú</option>
+              </select>
+              <div id="comuna-msg" class="form-text msg"></div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="telefono" placeholder="Ej: 91234567" />
+              <div id="telefono-msg" class="form-text msg"></div>
+            </div>
+          </div>
+
+          <!-- Web -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-8">
+              <label for="web" class="form-label">Página web personal (URL)</label>
+              <input type="text" class="form-control" id="web" placeholder="Ej: https://miweb.cl" />
+              <div id="web-msg" class="form-text msg"></div>
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+              <div class="w-100">
+                <div class="small text-muted mb-1">Debe tener formato:</div>
+                <div class="web-hint">https://<span class="text-nowrap">dominio</span>.<span class="text-nowrap">tld</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aficiones -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label for="hobby" class="form-label">Aficiones / pasatiempos</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="hobby" placeholder="Escribe una afición y presiona Agregar" />
+<button class="btn btn-primary" type="button" onclick="agregarAficion()">Agregar</button>
+              </div>
+              <div id="hobby-msg" class="form-text msg"></div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Aficiones agregadas</label>
+              <ul id="hobby-list" class="list-group hobby-list"></ul>
+              <div class="form-text text-muted">Mínimo 2 aficiones.</div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 flex-wrap mt-3">
+            <button type="submit" class="btn btn-primary px-4">Enviar</button>
+            <button type="reset" class="btn btn-outline-secondary px-4" onclick="resetFormulario(event)">Limpiar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script src="js/enviados-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
